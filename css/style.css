@@ -876,6 +876,11 @@ body:not(.light-mode) .nav__link:not(.nav__link--cta) {
     .nav__link:hover {
         color: var(--first-color);
     }
+
+    body:not(.light-mode) .nav {
+        background-color: hsl(220, 20%, 10%);
+        color: #fff;
+    }
 }
 
 
