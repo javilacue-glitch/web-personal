@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const btnModo = document.querySelector('#btn-modo');
+    const body = document.body;
+
+    const modoGuardado = localStorage.getItem('tema');
+    if (modoGuardado === 'claro') {
+        body.classList.add('light-mode');
+        if (btnModo) btnModo.checked = true;
+    }
+
+    if (btnModo) {
+        btnModo.addEventListener('change', function () {
+            if (this.checked) {
+                body.classList.add('light-mode');
+                localStorage.setItem('tema', 'claro');
+            } else {
+                body.classList.remove('light-mode');
+                localStorage.setItem('tema', 'oscuro');
+            }
+        });
+    }
+
     try {
         if (typeof AOS !== 'undefined') {
             AOS.init({
