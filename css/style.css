@@ -85,7 +85,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    /* Prevent horizontal scroll */
 }
 
 .main {
@@ -158,16 +157,12 @@ img {
     top: 0;
     left: 0;
     z-index: 10000;
-    /* High Z-Index */
     background-color: rgba(255, 255, 255, 0.95);
-    /* Slightly more opaque */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     transition: .3s;
     transform: translateZ(0);
-    /* Force hardware acceleration */
     will-change: transform;
 }
 
@@ -196,9 +191,7 @@ img {
     display: flex;
     position: relative;
     z-index: 10001;
-    /* Ensure toggle is on top */
     visibility: visible;
-    /* Force visibility */
     opacity: 1;
 }
 
@@ -284,6 +277,10 @@ body:not(.light-mode) {
     --body-color: hsl(220, 20%, 10%);
     --container-color: hsl(220, 20%, 14%);
     --border-color: hsl(220, 15%, 25%);
+}
+
+body:not(.light-mode) .contact__form-input {
+    color: var(--text-color);
 }
 
 body:not(.light-mode) .footer {
@@ -741,6 +738,7 @@ body:not(.light-mode) .nav__link:not(.nav__link--cta) {
     font-family: var(--body-font);
     outline: none;
     transition: .3s;
+    color: var(--title-color);
 }
 
 .contact__form-input:focus {
